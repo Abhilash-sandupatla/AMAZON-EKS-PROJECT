@@ -1,0 +1,3 @@
+ kubectl create namespace grafana
+ helm install stable/grafana - namespace grafana - set persistence.storageClassName="gp2" - set adminPassword='GrafanaAdm!n' - set datasources."datasources\.yaml".apiVersion=1 - set datasources."datasources\.yaml".datasources[0].name=Prometheus - set datasources."datasources\.yaml".datasources[0].type=prometheus - set datasources."datasources\.yaml".datasources[0].url=http://prometheus-server.prometheus.svc.cluster.local - set datasources."datasources\.yaml".datasources[0].access=proxy - set datasources."datasources\.yaml".datasources[0].isDefault=true - set service.type=LoadBalancer
+ kubectl get secret worn-bronco-grafana - namespace grafana -o yaml
