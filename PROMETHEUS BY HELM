@@ -1,0 +1,4 @@
+ kubectl create namespace prometheus
+ helm install stable/prometheus - namespace prometheus - set alertmanager.persistentVolume.storageClass="gp2" - set server.persistentVolume.storageClass="gp2"
+ kubectl get svc -n prometheus
+ kubectl -n prometheus port-forward svc/flailing-buffalo-prometheus-server 8888:80
